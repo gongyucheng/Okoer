@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="recentCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="recentCell" id="KGk-i7-Jjw" customClass="OBRecentCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_0003_time20_9" translatesAutoresizingMaskIntoConstraints="NO" id="BM5-Ao-0c7">
+                        <rect key="frame" x="16" y="12" width="20" height="20"/>
+                        <accessibility key="accessibilityConfiguration" label=""/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xx2-eC-zGq">
+                        <rect key="frame" x="287" y="8" width="20" height="27"/>
+                        <state key="normal" image="icon_0003_time20_9"/>
+                        <connections>
+                            <action selector="deleRecent:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uMd-s3-IUI"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="哈哈哈哈凤飞飞好" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zea-Sh-9Pg">
+                        <rect key="frame" x="55" y="12" width="120" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="BM5-Ao-0c7" secondAttribute="bottom" constant="11" id="AGa-TN-crg"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Zea-Sh-9Pg" secondAttribute="bottom" constant="5" id="BN2-xz-vKH"/>
+                    <constraint firstItem="Zea-Sh-9Pg" firstAttribute="leading" secondItem="BM5-Ao-0c7" secondAttribute="trailing" constant="19" id="Ng0-je-afT"/>
+                    <constraint firstAttribute="trailing" secondItem="xx2-eC-zGq" secondAttribute="trailing" constant="13" id="YUp-qz-Snb"/>
+                    <constraint firstItem="BM5-Ao-0c7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="eRg-tC-2KK"/>
+                    <constraint firstItem="xx2-eC-zGq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="kSV-jK-Hw5"/>
+                    <constraint firstItem="BM5-Ao-0c7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="ufS-YQ-pEZ"/>
+                    <constraint firstAttribute="bottom" secondItem="xx2-eC-zGq" secondAttribute="bottom" constant="8" id="vz4-YX-u3Z"/>
+                    <constraint firstItem="Zea-Sh-9Pg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="yp1-tC-0hB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="recentLabel" destination="Zea-Sh-9Pg" id="320-V6-WDf"/>
+            </connections>
+            <point key="canvasLocation" x="638" y="449"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_0003_time20_9" width="20" height="20"/>
+    </resources>
+</document>

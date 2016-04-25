@@ -1,0 +1,161 @@
+//
+//  YouKe.pch
+//  YouKe
+//
+//  Created by obally on 15/7/23.
+//  Copyright (c) 2015年 ___shangyait___. All rights reserved.
+//
+
+#ifndef YouKe_YouKe_pch
+#define YouKe_YouKe_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UIView+Extension.h"
+#import "UIWindow+Extension.h"
+#import "NSString+Extension.h"
+#import "Reachability.h"
+#import "OBManager.h"
+#import "UIViewExt.h"
+#import "OBDataService.h"
+#import "UIView+ContainerViewController.h"
+#import "KLToast.h"
+#import "MJExtension.h"
+#import "UIImageView+WebCache.h"
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import "MBProgressHUD+FTCExtension.h"
+#import "OBTokenExpired.h"
+#import "MobClick.h"
+#define AFNETWORKING_ALLOW_INVALID_SSL_CERTIFICATES
+
+
+//判断版本
+#define IOS7   [[UIDevice currentDevice]systemVersion].floatValue>=7.0
+#define ParseApplicationId @"55de81cfe0f55a8caa001e70"
+#define ParseClientKey @"55de823c67e58ee9d1000fc0"
+//ShareSDk
+#define ShareAPPID @"a00945e44582"
+#define ShareWeiXinAPPSecret @"bca06ec29bac9252a992781aeae66f86"
+//微信
+#define WeiXinAPPID @"wx476cdc7aa527512b"
+#define WeiXinAPPSecret @"baf7e6fbab5229126d42d22cf9831e9c"
+//腾讯
+#define TengXunAppKey @"1104748847"
+#define TengXunAppSecret @"BsnJFeeEPtavG85Z"
+//#define TengXunRredirectUri  @"http://www.cheping.cn"
+
+//新浪
+#define SinaWeiBoAppKey @"926390232"
+#define SinaWeiBoAppSecret @"50936a1cec27e351f1c5fa05d34ede14"
+#define SinaRredirectUri @"http://sns.whalecloud.com/sina2/callback"
+
+#define PPY_ANIMATION_DURATION 0.3f
+#define PPY_REVEAL_WIDTH 260.0f
+#define PPY_MONTH_HEIGHT_SCALE 0.5f
+#define PPY_BAR_BUTTON_ITEM_HEIGHT 40.0f
+#define PPY_BAR_BUTTON_ITEM_SIZE CGSizeMake(39.0f,41.0f)
+//判断是否是ios7
+#define ios7 ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
+
+//获取物理屏幕的尺寸
+#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+// 通知中心
+#define OBNotificationCenter [NSNotificationCenter defaultCenter]
+#define OBDidSlideNotification @"OBDidSlideNotification"
+#define OBDidDeSlideNotification @"OBDidDeSlideNotification"
+
+#define KSlideWidth  kScreenWidth - KViewWidth(48) - KViewWidth(20)* 2
+#define KbuttonEdgeWidth KViewWidth(20)
+#define KbuttonWidth KViewWidth(48)
+#define KViewHeight(h)  (h * kScreenHeight / 640.0)
+#define KViewWidth(w)  (w * kScreenWidth / 360.0)
+#define KFont(f)  (f * kScreenWidth / 320.0)
+
+#ifdef DEBUG // 处于开发阶段
+#define OBLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define OBLog(...)
+#endif
+
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
+
+// RGB颜色
+#define HWColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define OBGrayColor [UIColor colorWithRed:167/255.0 green:167/255.0 blue:167/255.0 alpha:1.0]
+// 随机色
+#define HWRandomColor HWColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+//#define BaseUrl @"http://api.okoer.com:6080"
+//#define BaseLogin @"https://api.okoer.com:6445"
+//#define BaseUrl @"http://dev.oekocn.com:6080"
+//#define BaseLogin @"https://dev.oekocn.com:6443"
+#define BaseUrl @"http://test.oekocn.com:6080"
+#define BaseLogin @"https://test.oekocn.com:6443"
+#define OBOkoerLoginURL [BaseLogin stringByAppendingFormat:@"/v1/user/login.json?"] //OKOer登录  POST
+#define OBOkoerRegisterURL [BaseLogin stringByAppendingFormat:@"/v1/user/register.json?"] //OKOer注册  POST
+#define OBKWURL [BaseUrl stringByAppendingFormat:@"/v1/article/list.json?"]    //资讯列表  GET
+#define OBSearchKWURL(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/article/list.json?uid=%@&timestamp=%@&sign=%@",a,b,c]    //资讯搜索列表  GET
+#define OBKPURL [BaseUrl stringByAppendingFormat:@"/v1/report/list.json?"]     //报告列表  GET
+#define OBSearchKPURL(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/report/list.json?uid=%@&timestamp=%@&sign=%@",a,b,c]    //报告搜索列表  GET
+#define OBJBURL [BaseUrl stringByAppendingFormat:@"/v1/recommend/list.json?"]  //精编列表  GET
+#define OBCollectionURL(a,b,c)[BaseUrl stringByAppendingFormat:@"/v1/node/collection/create.json?uid=%@&timestamp=%@&sign=%@",a,b,c] //收藏    POST
+#define OBDeCollectionJBURL(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/node/collection/cancel.json?uid=%@&timestamp=%@&sign=%@",a,b,c] //取消收藏  POST
+#define OBLIKEURL(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/node/like/create.json?uid=%@&timestamp=%@&sign=%@",a,b,c]  //点赞  POST
+#define OBDISLIKEURL(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/node/like/cancel.json?uid=%@&timestamp=%@&sign=%@",a,b,c] //取消点赞  POST
+
+//品牌墙-------------------------------------
+#define OBBrandCategroyURL [BaseUrl stringByAppendingFormat:@"/v1/brand/category.json?"]  //品牌墙-获取品牌分类  GET
+
+#define OBBrandListURL [BaseUrl stringByAppendingFormat:@"/v1/brand/list.json?"]  //品牌墙-获取品牌列表 GET
+#define OBProductReportListURL [BaseUrl stringByAppendingFormat:@"/v1/brand/product_report_list.json?"]  //品牌墙-获取商品【报告】列表  GET
+#define OBSearchProductListURL(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/brand/product_report_list.json?uid=%@&timestamp=%@&sign=%@",a,b,c]
+
+#define OBChatRoomListURL [BaseUrl stringByAppendingFormat:@"/v1/reportroom/list.json?"]  //恪吧-获取列表(聊天室) GET
+
+#define OBCollectionListURL(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/node/collection/list.json?uid=%@&timestamp=%@&sign=%@",a,b,c]  //获取收藏列表 GET
+//详情-----------------------
+#define OBKPDetailUrl(a) [NSString stringWithFormat:@"%@/v1/report/%ld.json",BaseUrl,a];  //资讯详情  GET
+#define OBKWDetailUrl(a) [NSString stringWithFormat:@"%@/v1/article/%ld.json",BaseUrl,a];  //报告详情  GET
+#define OBProductDetailUrl(a) [NSString stringWithFormat:@"%@/v1/brand/%ld.json",BaseUrl,a];  //产品详情  GET
+
+//评论-----------------------
+#define OBCommentListUrl [BaseUrl stringByAppendingFormat:@"/v1/comment/listbynode.json?"]    //评论列表  GET
+#define OBCreateCommentUrl(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/comment/create.json?uid=%@&timestamp=%@&sign=%@",a,b,c]    //发评论  POST
+#define OBJuBaoUrl(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/comment/expose.json?uid=%@&timestamp=%@&sign=%@",a,b,c]    //举报  POST
+
+//聊天室---------------------------
+#define OBConnectChatURL [BaseUrl stringByAppendingFormat:@""]     //连接聊天室
+//详情广告
+#define OBGuangGaoUrl [BaseUrl stringByAppendingFormat:@"/v1/ad/list.json?"]    //资讯列表  GET
+//更新用户头像  POST
+#define OBUpdateUserIcon(a,b,c) [BaseLogin stringByAppendingFormat:@"/v1/user/uploadicon.json?uid=%@&timestamp=%@&sign=%@",a,b,c]
+
+//获取点赞数 评论数
+#define OBStatisticUrl [BaseUrl stringByAppendingFormat:@"/v1/node/statistic/list.json?"]
+//获取点赞 收藏状态
+#define OBStatusUrl(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/node/state/list.json?uid=%@&timestamp=%@&sign=%@",a,b,c]
+
+//获取用户信息  GET
+#define OBGetProfile(a,b,c) [BaseLogin stringByAppendingFormat:@"/v1/user/get_profile.json?uid=%@&timestamp=%@&sign=%@",a,b,c]
+//更新用户信息  POST
+#define OBUpdateProfile(a,b,c) [BaseLogin stringByAppendingFormat:@"/v1/user/update_profile.json?uid=%@&timestamp=%@&sign=%@",a,b,c]
+//搜索热词数据  GET
+#define OBHotDataUrl [BaseUrl stringByAppendingFormat:@"/v1/search/recommend.json"]
+//获取清单列表
+#define OBListUrl(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/listing/list.json?uid=%@&timestamp=%@&sign=%@",a,b,c]
+//创建清单
+#define OBCreateListUrl(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/listing/create.json?uid=%@&timestamp=%@&sign=%@",a,b,c]
+//加入清单
+#define OBAddToListUrl(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/listing/add.json?uid=%@&timestamp=%@&sign=%@",a,b,c]
+//获取清单列表
+#define OBGetProductListURL(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/brand/product_report_list.json?uid=%@&timestamp=%@&sign=%@",a,b,c]
+//移除清单中的商品
+#define OBRemoveListProductURL(a,b,c) [BaseUrl stringByAppendingFormat:@"/v1/listing/remove.json?uid=%@&timestamp=%@&sign=%@",a,b,c]
+#endif

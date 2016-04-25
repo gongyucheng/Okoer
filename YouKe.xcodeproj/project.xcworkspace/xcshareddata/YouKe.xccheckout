@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FA6F9F89-B317-4B0E-88BD-A56FB8EA88BA</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>d0540063-5cab-eb4f-b87a-cee570a8a3f9++2568</key>
+		<string>svn://10.0.1.252/class20/20%25E6%259C%259F%25E7%258F%25AD%25E7%25BA%25A7/03.iOS%2520SDK/17%2520%25E7%25AC%25AC%25E5%258D%2581%25E4%25B8%2583%25E8%258A%2582%25E8%25AF%25BE%2520%25E7%25BD%2591%25E7%25BB%259C2/%25E7%259B%2591%25E5%2590%25AC%25E5%25BD%2593%25E5%2589%258D%25E7%25BD%2591%25E7%25BB%259C/ASIDownLoad/ASIHttpRequest/Reachability</string>
+		<key>d0540063-5cab-eb4f-b87a-cee570a8a3f9++6331</key>
+		<string>svn://10.0.1.252/class20/20%25E6%259C%259F%25E7%258F%25AD%25E7%25BA%25A7/03.iOS%2520SDK/%25E9%25A1%25B9%25E7%259B%25AE%25E5%25AE%259E%25E6%2588%25982/04%2520%25E4%25BB%25A3%25E7%25A0%2581/11%2520%25E7%25AC%25AC%25E5%258D%2581%25E4%25B8%2580%25E5%25A4%25A9/WXWeibo/WXWeibo/Common/MBProgressHUD</string>
+	</dict>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>d0540063-5cab-eb4f-b87a-cee570a8a3f9++2568</key>
+		<string>Reachability/</string>
+		<key>d0540063-5cab-eb4f-b87a-cee570a8a3f9++6331</key>
+		<string>../MBProgressHUD</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>d0540063-5cab-eb4f-b87a-cee570a8a3f9++2568</key>
+		<string>svn://10.0.1.252/class20</string>
+		<key>d0540063-5cab-eb4f-b87a-cee570a8a3f9++6331</key>
+		<string>svn://10.0.1.252/class20</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>svn://10.0.1.252/class20/20%25E6%259C%259F%25E7%258F%25AD%25E7%25BA%25A7/03.iOS%2520SDK/17%2520%25E7%25AC%25AC%25E5%258D%2581%25E4%25B8%2583%25E8%258A%2582%25E8%25AF%25BE%2520%25E7%25BD%2591%25E7%25BB%259C2/%25E7%259B%2591%25E5%2590%25AC%25E5%25BD%2593%25E5%2589%258D%25E7%25BD%2591%25E7%25BB%259C/ASIDownLoad/ASIHttpRequest/Reachability</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>d0540063-5cab-eb4f-b87a-cee570a8a3f9++2568</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>d0540063-5cab-eb4f-b87a-cee570a8a3f9++6331</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MBProgressHUD</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>d0540063-5cab-eb4f-b87a-cee570a8a3f9++2568</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Reachability</string>
+		</dict>
+	</array>
+</dict>
+</plist>
